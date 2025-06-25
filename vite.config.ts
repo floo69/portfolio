@@ -1,26 +1,15 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react-swc';
-import path from 'path';
-import { componentTagger } from 'lovable-tagger';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react-swc'
+import path from "path"
 
-export default defineConfig(({ mode }) => {
-  return {
-    base: '/portfolio/', // ✅ CRITICAL for GitHub Pages
-
-    server: {
-      host: '::',
-      port: 8080,
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
     },
-
-    plugins: [
-      react(),
-      mode === 'development' && componentTagger(),
-    ].filter(Boolean),
-
-    resolve: {
-      alias: {
-        '@': path.resolve(__dirname, './src'),
-      },
-    },
-  };
-});
+  },
+  // Set base path for GitHub Pages deployment
+  base: process.env.NODE_ENV === 'production' ? '/code-canvas-floyd/' : '/',
+})
