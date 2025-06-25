@@ -50,14 +50,14 @@ const ContactSection = () => {
     {
       name: 'LinkedIn',
       icon: Linkedin,
-      url: 'https://linkedin.com/in/floyd-carlo',
+      url: 'https://www.linkedin.com/in/floyd-carlo-63642b287',
       color: 'neon-purple',
       description: 'Connect with me professionally'
     },
     {
       name: 'Email',
       icon: Mail,
-      url: 'mailto:floyd.carlo@example.com',
+      url: 'mailto:flcarlo000@gmail.com',
       color: 'neon-green',
       description: 'Send me a direct message'
     }
